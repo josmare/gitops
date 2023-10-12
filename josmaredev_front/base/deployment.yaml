@@ -9,7 +9,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: josmaredev_front
+      app: josmaredev-front
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -18,10 +18,10 @@ spec:
   template:
     metadata:
       labels:
-        app: josmaredev_front
+        app: josmaredev-front
     spec:
       containers:
-        - name: josmaredev_front
+        - name: josmaredev-front
           image: josmar/josmaredev:latest
           imagePullPolicy: Always
           resources: { }
