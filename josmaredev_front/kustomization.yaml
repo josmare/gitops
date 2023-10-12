@@ -4,11 +4,3 @@ kind: Kustomization
 resources:
   - production
 
-patches:
-  - target:
-      kind: Deployment
-      name: josmaredev_front
-    patch: |- 
-      - op: replace
-        path: /spec/replicas
-        value: 2

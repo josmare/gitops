@@ -5,3 +5,11 @@ resources:
   - ../base
   - namespace.yaml
 
+patches:
+  - target:
+      kind: Deployment
+      name: josmaredev-front
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 2
