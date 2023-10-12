@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: josmaredev_front
+  name: josmaredev-front
 spec:
   progressDeadlineSeconds: 600
   replicas: 0
