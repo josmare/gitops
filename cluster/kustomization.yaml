@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - ./flux-system
 #  - ./cert-manager
-  - ./ingress-nginx
+#  - ./ingress-nginx
