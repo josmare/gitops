@@ -17,3 +17,13 @@ spec:
     createNamespace: true
   interval: 6h0m0s
   targetNamespace: ingress-nginx
+  values:
+    controller:
+      allowSnippetAnnotations: false
+      ingressClassResource:
+        default: true
+      kind: DaemonSet
+      service:
+        enabled: true
+      terminationGracePeriodSeconds: 30
+      watchIngressWithoutClass: true
