@@ -7,6 +7,7 @@ spec:
   type: ClusterIP
   ports:
     - port: 80
+      protocol: TCP
       targetPort: 80
   selector:
     app: josmaredev-front
@@ -16,7 +17,9 @@ kind: Ingress
 metadata:
   name: josmare-front-ingress
   annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
     cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/tls-acme: "true"
 spec:
   ingressClassName: nginx
   rules:
@@ -33,4 +36,4 @@ spec:
   tls:
     - hosts:
         - josmare.fyi
-      secretName: josmaredev-front-lb-care-cert
+      secretName: tls-nginx-general
