@@ -4,11 +4,11 @@ kind: Service
 metadata:
   name: josmaredev-svc
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 80
-      protocol: TCP
       targetPort: 80
+      nodePort: 30007
   selector:
     app: josmaredev-front
 ---
@@ -17,9 +17,11 @@ spec:
 #metadata:
 #  name: josmare-front-ingress
 #  annotations:
-#    nginx.ingress.kubernetes.io/rewrite-target: /
-#    cert-manager.io/cluster-issuer: letsencrypt-prod
-#    kubernetes.io/tls-acme: "true"
+#    load-balancer.hetzner.cloud/name: "k8s-lb"
+#    load-balancer.hetzner.cloud/location: "nbg1"
+#    load-balancer.hetzner.cloud/use-private-ip: "true"
+#    load-balancer.hetzner.cloud/uses-proxyprotocol: "true"
+#    load-balancer.hetzner.cloud/hostname: "josmare.fyi"
 #spec:
 #  ingressClassName: nginx
 #  rules:
